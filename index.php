@@ -16,7 +16,7 @@ $subTitle = 'Web/Game developer';
 include 'partials/header.php'; 
  ?>    
         <main>  
-            <h1>Projecten</h1>
+            <h1 class="titlePage">Projecten</h1>
             <!-- A bundle of cards with all the Projects -->
             <div class="cards">
                 <a href="#">

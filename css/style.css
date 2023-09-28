@@ -4,14 +4,13 @@ body {
 	margin: 0px;
 }
 
-.logo{
-	color: white;
-	display: flex;
-	gap: 2%;
-	align-items: center;
+a {
 	text-decoration: none;
 }
 
+/* Navbar */
+
+/* Makes the navbar a grid so I can position the items easy on the left and right */
 nav {
 	background-color: #333;
 	display: grid;
@@ -21,12 +20,19 @@ nav {
 	padding-left: 10%;
 	padding-right: 10%;
 }
-
+/* Makes the color of the logo text white and makes it nice and centered with some room in between */
+.logo{
+	color: white;
+	display: flex;
+	gap: 2%;
+	align-items: center;
+}
+/* Turning the svg from the logo into white by using filter */
 nav img {
 	filter: brightness(100%) invert(100%);
 	height: 2vh;
 }
-
+/* Using a list for the navbar items but without the dots by removing the list style */
 ul {
 	list-style-type: none;
 	margin: 0;
@@ -34,27 +40,30 @@ ul {
 	overflow: hidden;
 	text-align: center;
 }
-
+/* Using display inline flex so it will be one line and instead of using float */
 li {
-	float: right;
+	display: inline-flex;
+	justify-content: end;
 }
-
+/* aligns items and makes the text white */
 li a {
 	display: block;
 	color: white;
 	text-align: center;
 	padding: 14px 16px;
-	text-decoration: none;
 }
-
+/* Adding a hover color change */
 li a:hover:not(.active) {
 	background-color: #111;
 }
-
+/* Shows the link with a different color on the active page */
 .active {
 	background-color: #666;
 }
 
+/* Header */
+
+/* Sets a height of 90vh to and fills it up with a banner image */
 header{
 	display: flex;
 	background-image: url("../img/bg.png");
@@ -70,25 +79,30 @@ header{
 	text-align: center;
 	box-shadow: 0px 5px 10px #3333338a;
 }
-
+/* Sets color and size of the text inside the header */
 .headerText {
 	color: white;
 	font-size: 32px;
 }
 
+/* Main section */
 
+/* Adding padding with rem (using rem instead of px is my prefrence because its scales much better) */
 main {
 	padding-top: 4rem;
 	padding-bottom: 8rem;
 }
-
-main h1 {
+/* Shows the tile of the page with a bigger font size */
+.titlePage {
 	display: flex;
     justify-content: center;
 	padding-bottom: 4rem;
 	font-size: 50px;
 }
 
+/* Cards */
+
+/* Cards is a sections with multiple cards iside it, it is a grid with an auto-fit that makes it more responsive */
 .cards {
 	max-width: 80vw;
 	margin: 0 auto;
@@ -96,12 +110,11 @@ main h1 {
 	gap: 3rem;
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
-
-.cards a{
-	text-decoration: none;
+/* sets a height for the card */
+.cards a {
 	height: 25rem;
 }
-
+/* A single card with a rounded edge and a set height to fill the height */
 .card {
 	background-color: #666;
 	color: white;
@@ -109,85 +122,109 @@ main h1 {
 	box-shadow: 5px 8px 10px #33333371;
 	border-radius: 5px;
 }
-
+/* Sets the image of the card to contain the image so its always readable and a set height */
 .cardHead {
 	background-size: contain;
 	background-position: center;
 	background-repeat: no-repeat;
-	height: 150px;
-	padding: 10px;
+	height: 3rem;
+	padding: 3rem;
 	border: 12px solid #666;
 	background-color: white;
 	border-radius: 10px;
 }
-
+/* Makes the card a bit smaller when hovering over it and made it a bit smoother by using a transition */
 .card:hover {
 	transform: scale(0.95);
 	transition: all .5s;
 }
-
-.circleSolution{
+/* Custom project image specifier to add the image on the circle solution project */
+.circleSolution {
 	background-image: url("../img/circleSolutions/logo.png");
 }
-
+/* Rounded line to seperate the title and text */
 hr {
 	border: 1px solid rgba(255, 255, 255, 0.75);
 	border-radius: 5px;
+	box-shadow: 1px 3px 5px #33333371;
 }
-
+/* Sets a margin for the text so it look a bit better */
 .cardText {
 	margin: 10px;
 }
 
+/* Assignments */
+
+/* This is a section for assignments */
+.assignments {
+	background-color: #666;
+	border-radius: 10px;
+	display: block;
+	align-items: center;
+	padding: 2rem 5rem 2rem 5rem;
+	margin: 0rem 5rem 0rem 5rem;
+	color: white;
+}
+/* Gives more room between assignments */
+.assignments p {
+	padding: 0.5rem;
+}
+/* Gives room between the social buttons and makes them a bit smaller */
+.socialAssignment {
+	width: 3rem;
+	padding-right: 0.5rem;
+}
+
+/* Footer */
+
+/* Sets a height for the footer, a background color and makes it into a grid */
 footer {
-	height: 80px;
+	height: 5vh;
 	background-color: #333;
 	display: grid;
 	grid-template-columns: repeat(6, 1fr);
 	grid-template-rows: repeat(4, 1fr);
-	grid-column-gap: 0px;
-	grid-row-gap: 0px;
+	grid-column-gap: 0rem;
+	grid-row-gap: 0rem;
 }
-	
+/* Makes the grid size for the social buttons and a seperation border to seperate the items	 */
 .footerSocials { 
 	grid-area: 1 / 1 / 5 / 2; 
 	align-items: center;
     display: flex;
 	gap: 1rem;
-	padding-left: 28%;
-	border-right: 3px solid rgba(255, 255, 255, 0.25);
+	justify-content: center;
+	border-right: 0.3rem solid rgba(255, 255, 255, 0.25);
 }
-
+/* Makes the icons white instead of the default color */
 .footerSocials a i {
 	color: white;
 }
-
+/* Gives the buttons a little animation while hovering */
 .socialButton:hover {
-	animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
-	transform: translate3d(0, 0, 0);
-	perspective: 1000px;
+	animation: shake 0.82s;
   }
-  
-  @keyframes shake {
-	10%, 90% {
-	  transform: translate3d(-1px, 0, 0);
-	}
-	20%, 80% {
-	  transform: translate3d(2px, 0, 0);
-	}
-	
-	30%, 50%, 70% {
-	  transform: translate3d(-2px, 0, 0);
-	}
-	40%, 60% {
-	  transform: translate3d(2px, 0, 0);
-  }
-  }
+/* An animation named shake that functions with keyframes   */
+@keyframes shake {
+10%, 90% {
+	transform: translate3d(-0.1rem, 0, 0);
+}
+20%, 80% {
+	transform: translate3d(0.2rem, 0, 0);
+}
 
-
+30%, 50%, 70% {
+	transform: translate3d(-0.2rem, 0, 0);
+}
+40%, 60% {
+	transform: translate3d(0.2rem, 0, 0);
+}
+}
+/* Sets the grid size for the footer text section and makes the text white and centered */
 .footerText { 
 	align-items: center;
     display: flex;
 	color: white;
+	justify-content: center;
 	grid-area: 1 / 4 / 5 / 7; 
 }
