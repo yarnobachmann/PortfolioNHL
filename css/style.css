@@ -16,7 +16,7 @@ nav {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 	align-items: center;
-	height: 3vh;
+	height: 5vh;
 	padding-left: 10%;
 	padding-right: 10%;
 }
@@ -24,38 +24,48 @@ nav {
 .logo{
 	color: white;
 	display: flex;
-	gap: 2%;
 	align-items: center;
 }
 /* Turning the svg from the logo into white by using filter */
 nav img {
 	filter: brightness(100%) invert(100%);
 	height: 2vh;
+	padding-right: 0.5rem;
 }
 /* Using a list for the navbar items but without the dots by removing the list style */
 ul {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
+	height: 100%;
 	overflow: hidden;
 	text-align: center;
+	display: grid;
+	justify-content: space-between;
 }
 /* Using display inline flex so it will be one line and instead of using float */
 li {
-	display: inline-flex;
-	justify-content: end;
+	grid-area: 1;
+	width: fit-content;
+	display: flex;
+	align-items: center;
 }
 /* aligns items and makes the text white */
 li a {
-	display: block;
+	display: flex;
 	color: white;
 	text-align: center;
-	padding: 14px 16px;
+	padding-left: 0.8rem;
+	padding-right: 0.8rem;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
 }
-/* Adding a hover color change */
-li a:hover:not(.active) {
+/* Adding a hover color change and exclude .active and .logo */
+li a:hover:not(.active, .logo) {
 	background-color: #111;
 }
+
 /* Shows the link with a different color on the active page */
 .active {
 	background-color: #666;
@@ -113,12 +123,14 @@ main {
 /* sets a height for the card */
 .cards a {
 	height: 25rem;
+	
 }
 /* A single card with a rounded edge and a set height to fill the height */
 .card {
-	background-color: #666;
-	color: white;
+	background-color: #fff;
+	color: #000;
 	height: 100%;
+	width: 100%;
 	box-shadow: 5px 8px 10px #33333371;
 	border-radius: 5px;
 }
@@ -127,11 +139,10 @@ main {
 	background-size: contain;
 	background-position: center;
 	background-repeat: no-repeat;
-	height: 3rem;
+	height: 6rem;
 	padding: 3rem;
-	border: 12px solid #666;
-	background-color: white;
-	border-radius: 10px;
+	background-color: #f3f3f3;
+	border-radius: 0px 0px 5px 5px;
 }
 /* Makes the card a bit smaller when hovering over it and made it a bit smoother by using a transition */
 .card:hover {
@@ -142,28 +153,26 @@ main {
 .circleSolution {
 	background-image: url("../img/circleSolutions/logo.png");
 }
-/* Rounded line to seperate the title and text */
-hr {
-	border: 1px solid rgba(255, 255, 255, 0.75);
-	border-radius: 5px;
-	box-shadow: 1px 3px 5px #33333371;
-}
 /* Sets a margin for the text so it look a bit better */
 .cardText {
 	margin: 10px;
+	padding-left: 1rem;
+	padding-right: 1rem;
 }
 
 /* Assignments */
 
 /* This is a section for assignments */
 .assignments {
-	background-color: #666;
-	border-radius: 10px;
+	background-color: #fff;
+	color: #000;
 	display: block;
 	align-items: center;
 	padding: 2rem 5rem 2rem 5rem;
-	margin: 0rem 5rem 0rem 5rem;
-	color: white;
+	margin: 3rem 5rem 3rem 5rem;
+	box-shadow: 5px 8px 10px #33333371;
+	border: 0.1rem solid #dfdfdfa1;
+	border-radius: 5px;
 }
 /* Gives more room between assignments */
 .assignments p {
@@ -177,9 +186,8 @@ hr {
 
 /* Footer */
 
-/* Sets a height for the footer, a background color and makes it into a grid */
+/* Sets a background color and makes it into a grid */
 footer {
-	height: 5vh;
 	background-color: #333;
 	display: grid;
 	grid-template-columns: repeat(6, 1fr);

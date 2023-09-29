@@ -26,7 +26,6 @@ include 'partials/header.php';
                         </div>
                         <div class="cardText">
                             <h2>circle solutions</h2>
-                            <hr>
                             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
                                 Obcaecati omnis optio, voluptates voluptate natus animi 
                                 non laboriosam culpa unde maiores, neque cum ratione error 
@@ -42,7 +41,6 @@ include 'partials/header.php';
                         </div>
                         <div class="cardText">
                             <h2>Project 2</h2>
-                            <hr>
                             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
                                 Obcaecati omnis optio, voluptates voluptate natus animi 
                                 non laboriosam culpa unde maiores, neque cum ratione error 
@@ -58,7 +56,6 @@ include 'partials/header.php';
                         </div>
                         <div class="cardText">
                             <h2>Project 3</h2>
-                            <hr>
                             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
                                 Obcaecati omnis optio, voluptates voluptate natus animi 
                                 non laboriosam culpa unde maiores, neque cum ratione error 
@@ -74,7 +71,6 @@ include 'partials/header.php';
                         </div>
                         <div class="cardText">
                             <h2>Project 4</h2>
-                            <hr>
                             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
                                 Obcaecati omnis optio, voluptates voluptate natus animi 
                                 non laboriosam culpa unde maiores, neque cum ratione error 

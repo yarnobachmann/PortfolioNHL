@@ -18,7 +18,7 @@ include 'partials/header.php';
         <main>  
             <h1 class="titlePage">Opdrachten</h1>
             <div class="assignments">
-                <h3>Week 1</h3>
+                <h2>Week 1</h2>
                 <p>
                     <?php
                         // Changed some syntax errors till it works
@@ -39,21 +39,21 @@ include 'partials/header.php';
                         echo "<p>$c</p>";
                     ?>
                 </p>
-                <p>
-                    <?php
-                        // Values
-                        $a = 2;
-                        $b = 6;
-                        // Calculate values to make them equal
-                        $a= $a + $b;
-                        $b= $a - $b;
-                        $a= $a - $b;
-                        // Displays the values
-                        echo "<p>$a</p>";
-                        echo "<p>$b</p>";
-                    ?>
-                </p>
-                <h3>Week 2</h3>
+                <?php
+                    // Values
+                    $a = 2;
+                    $b = 6;
+                    // Calculate values to make them equal
+                    $a= $a + $b;
+                    $b= $a - $b;
+                    $a= $a - $b;
+                    // Displays the values
+                    echo "<p>$a</p>";
+                    echo "<p>$b</p>";
+                ?>
+            </div>
+            <div class="assignments">
+                <h2>Week 2</h2>
                 <p>
                     <?php
                         // User input
@@ -184,7 +184,9 @@ include 'partials/header.php';
                         echo "Voorspelling voor de toekomst: " . $voorspelling;
                     ?>
                 </p>
-                <h3>Week 3</h3>
+            </div>
+            <div class="assignments">
+                <h2>Week 3</h2>
                 <p>
                     <?php
                         //functions
@@ -254,7 +256,9 @@ include 'partials/header.php';
                         }
                     ?>
                 </p>
-                <h3>Week 4</h3>
+            </div>
+            <div class="assignments">
+                <h2>Week 4</h2>
                 <p>
                     <?php
                         // Array of movies
@@ -354,12 +358,12 @@ include 'partials/header.php';
                         // Var outside of the function
                         $x = 5; 
                         function testScope2() {
-                            echo "Binnen de functie: x = $x<br>";
+                            echo "Binnen de functie: x = $x <br>";
                         }
                         // Calls function but doesn't what it is so it would throw an error
                         testScope2();
                         // Echo that knows the var so it would expectitly print 5
-                        echo "Buiten de functie: x = $x<br>";                            
+                        echo "Buiten de functie: x = $x <br>";                            
                     ?>
                 </p>
             </div>
