@@ -1,5 +1,12 @@
-<!DOCTYPE html>
-<html lang="NL">    
+<?php
+/* 
+* Filename      : index.php
+* Assignment    : portfolio
+* Created       : mid september
+* Description   : dit is de portfolio van de portfolio opdracht
+* Programmer    : Yarno Bachmann
+*/
+?>
 <?php
 // Calling the head tag with the default values 
 include 'partials/head.php';
@@ -79,6 +86,45 @@ include 'partials/header.php';
                         </div>
                     </div>
                 </a>
+            </div>
+            <?php
+                $name = $email = $subject = $message = "";
+                if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                    $name = input($_POST["name"]);
+                    $email = input($_POST["email"]);
+                    $subject = input($_POST["subject"]);
+                    $message = input($_POST["message"]);
+                  }
+
+                function input($data) {
+                    $data = trim($data);
+                    $data = stripslashes($data);
+                    $data = htmlspecialchars($data);
+                    function_alert($data);
+                    return $data;
+                }  
+            ?>
+            <div class="contactForm">
+            <h1 class="titleContact">Contact</h1>
+                <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+                    <label for="name">Naam:</label>
+                    <input type="text" name="name" placeholder="Jhon Dhoe" required>
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" placeholder="jhondhoe@jhon.com" required>
+                    <label for="subject">Onderwerp:</label>
+                    <input type="text" name="subject" placeholder="Contact" required>
+                    <label for="message">Bericht:</label>
+                    <textarea name="message" cols="30" rows="10" placeholder="Hier je bericht" required></textarea>
+                    <label for="submit"></label>
+                    <input class="submit" type="submit" name="submit" value="Verstuur">
+                </form>
+                <?php
+                    function function_alert($message) { 
+                        
+                        // Display the alert box  
+                        echo "<script>alert('$message');</script>"; 
+                    }                     
+                ?>
             </div>
         </main>
         <!-- Calling the footer from a seperate file -->

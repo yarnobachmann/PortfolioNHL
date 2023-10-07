@@ -100,13 +100,11 @@ header{
 /* Adding padding with rem (using rem instead of px is my prefrence because its scales much better) */
 main {
 	padding-top: 4rem;
-	padding-bottom: 8rem;
 }
 /* Shows the tile of the page with a bigger font size */
 .titlePage {
 	display: flex;
     justify-content: center;
-	padding-bottom: 4rem;
 	font-size: 50px;
 }
 
@@ -115,14 +113,14 @@ main {
 /* Cards is a sections with multiple cards iside it, it is a grid with an auto-fit that makes it more responsive */
 .cards {
 	max-width: 80vw;
-	margin: 0 auto;
+	margin: 15rem auto;
 	display: grid;
 	gap: 3rem;
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 /* sets a height for the card */
 .cards a {
-	height: 25rem;
+	height: 30rem;
 	
 }
 /* A single card with a rounded edge and a set height to fill the height */
@@ -182,6 +180,54 @@ main {
 .socialAssignment {
 	width: 3rem;
 	padding-right: 0.5rem;
+}
+
+/* Contact */
+
+.titleContact {
+	display: flex;
+    justify-content: center;
+	font-size: 50px;
+	color: #fff;
+}
+
+form {
+	display: grid;
+	grid-template-columns: 6.5rem auto;
+	grid-gap: 15px;
+	max-width: 30vw;
+    width: 100%;
+	padding: 3rem;
+	border-radius: 1rem;
+	color: #fff;
+  }
+
+input, textarea {
+	border-radius: 0.2rem; 
+	padding: 0.5rem;
+	background-color: #00000000;
+	box-shadow: 3px 5px 10px #33333371;
+	color: #fff;
+	border: 1px solid #00000010;
+}
+
+input::placeholder, textarea::placeholder {
+	color: #ffffff7e;
+}
+  
+.contactForm {
+	justify-content: center;
+    padding: 15rem 5rem 20rem 5rem;
+    display: flex;
+    gap: 3rem;
+    background-color: #666;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.submit {
+	margin-left: auto;
 }
 
 /* Footer */

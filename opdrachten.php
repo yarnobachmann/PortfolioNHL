@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="NL">
 <?php
 // Calling the head tag with the default values 
 include 'partials/head.php';
