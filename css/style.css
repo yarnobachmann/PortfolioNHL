@@ -128,7 +128,7 @@ main {
 	background-color: #fff;
 	color: #000;
 	height: 100%;
-	width: 100%;
+	width: 28rem;
 	box-shadow: 5px 8px 10px #33333371;
 	border-radius: 5px;
 }
@@ -137,25 +137,41 @@ main {
 	background-size: contain;
 	background-position: center;
 	background-repeat: no-repeat;
-	height: 6rem;
-	padding: 3rem;
+	height: 14rem;
 	background-color: #f3f3f3;
 	border-radius: 0px 0px 5px 5px;
+	overflow: hidden;
 }
 /* Makes the card a bit smaller when hovering over it and made it a bit smoother by using a transition */
 .card:hover {
-	transform: scale(0.95);
+	transform: scale(1.1);
 	transition: all .5s;
 }
+
+.card:hover .circleSolution img {
+	transform: scale(1.3);
+	transition: all .8s;
+	filter: blur(.3rem);
+}
 /* Custom project image specifier to add the image on the circle solution project */
-.circleSolution {
-	background-image: url("../img/circleSolutions/logo.png");
+.circleSolution img {
+	height: 100%;
+    width: 100%;
+    object-fit: contain;
 }
 /* Sets a margin for the text so it look a bit better */
 .cardText {
 	margin: 10px;
 	padding-left: 1rem;
 	padding-right: 1rem;
+}
+
+.cardText h2 {
+	font-size: 2rem;
+}
+
+.cardText p {
+	font-size: 1rem;
 }
 
 /* Assignments */

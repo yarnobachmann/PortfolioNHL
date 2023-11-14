@@ -26,66 +26,48 @@ include 'partials/header.php';
             <h1 class="titlePage">Projecten</h1>
             <!-- A bundle of cards with all the Projects -->
             <div class="cards">
-                <a href="#">
-                    <div class="card">
-                        <div class="cardHead circleSolution">
+                <?php 
+                    $projects[0] = array(
+                        "link" => "./projecten/circle-solutions/index.php",
+                        "title" => "circle solutions",
+                        "beschrijving" => "In periode 1 heb ik dit project mogen maken samen met mijn projectleden van groep INF1A.
+                        Dit is een website die we hebben gebouwt voor de fictionele opdrachtgever circle solutions.
+                        circle solutions is een bedrijfje dat intranetten maakt voor iedereen.",
+                        "image" => "./img/circleSolutions/logo.png"
+                    );
+                    $projects[1] = array(
+                        "link" => "#",
+                        "title" => "Project 2",
+                        "beschrijving" => "Dit project is nog niet van toepassing.",
+                        "image" => "./img/placeholder.png"
+                    );
+                    $projects[2] = array(
+                        "link" => "#",
+                        "title" => "Project 3",
+                        "beschrijving" => "Dit project is nog niet van toepassing.",
+                        "image" => "./img/placeholder.png"
+                    );
+                    $projects[3] = array(
+                        "link" => "#",
+                        "title" => "Project 4",
+                        "beschrijving" => "Dit project is nog niet van toepassing.",
+                        "image" => "./img/placeholder.png"
+                    );
 
+                    foreach ($projects as $project) {
+                        echo '<a href="' . $project["link"] . '" target="_blank">
+                        <div class="card">
+                            <div class="cardHead circleSolution">
+                                <img src="' . $project["image"] . '" alt="project afbeelding">
+                            </div>
+                            <div class="cardText">
+                                <h2> ' . $project['title'] . '</h2>
+                                <p> ' . $project['beschrijving'] . '</p>
+                            </div>
                         </div>
-                        <div class="cardText">
-                            <h2>circle solutions</h2>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                                Obcaecati omnis optio, voluptates voluptate natus animi 
-                                non laboriosam culpa unde maiores, neque cum ratione error 
-                                iure eius quidem laudantium, magni quos.
-                            </p>
-                        </div>
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="card">
-                        <div class="cardHead">
-
-                        </div>
-                        <div class="cardText">
-                            <h2>Project 2</h2>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                                Obcaecati omnis optio, voluptates voluptate natus animi 
-                                non laboriosam culpa unde maiores, neque cum ratione error 
-                                iure eius quidem laudantium, magni quos.
-                            </p>
-                        </div>
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="card">
-                        <div class="cardHead">
-
-                        </div>
-                        <div class="cardText">
-                            <h2>Project 3</h2>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                                Obcaecati omnis optio, voluptates voluptate natus animi 
-                                non laboriosam culpa unde maiores, neque cum ratione error 
-                                iure eius quidem laudantium, magni quos.
-                            </p>
-                        </div>
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="card">
-                        <div class="cardHead">
-
-                        </div>
-                        <div class="cardText">
-                            <h2>Project 4</h2>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                                Obcaecati omnis optio, voluptates voluptate natus animi 
-                                non laboriosam culpa unde maiores, neque cum ratione error 
-                                iure eius quidem laudantium, magni quos.
-                            </p>
-                        </div>
-                    </div>
-                </a>
+                    </a> ';
+                    }
+                ?>
             </div>
             <?php
                 $name = $email = $subject = $message = "";
