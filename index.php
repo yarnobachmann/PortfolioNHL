@@ -8,9 +8,12 @@
 */
 ?>
 <?php
+// Calling database connection
+include 'partials/databaseConnection.php';
 // Calling the head tag with the default values 
 include 'partials/head.php';
 // Override the active class in the include 
+$folderStyle = ' ';
 $contactClass = ' ';
 $phpClass = ' ';
 $homeClass = 'active';
@@ -27,46 +30,40 @@ include 'partials/header.php';
             <!-- A bundle of cards with all the Projects -->
             <div class="cards">
                 <?php 
-                    $projects[0] = array(
-                        "link" => "./projecten/circle-solutions/index.php",
-                        "title" => "circle solutions",
-                        "beschrijving" => "In periode 1 heb ik dit project mogen maken samen met mijn projectleden van groep INF1A.
-                        Dit is een website die we hebben gebouwt voor de fictionele opdrachtgever circle solutions.
-                        circle solutions is een bedrijfje dat intranetten maakt voor iedereen.",
-                        "image" => "./img/circleSolutions/logo.png"
-                    );
-                    $projects[1] = array(
-                        "link" => "#",
-                        "title" => "Project 2",
-                        "beschrijving" => "Dit project is nog niet van toepassing.",
-                        "image" => "./img/placeholder.png"
-                    );
-                    $projects[2] = array(
-                        "link" => "#",
-                        "title" => "Project 3",
-                        "beschrijving" => "Dit project is nog niet van toepassing.",
-                        "image" => "./img/placeholder.png"
-                    );
-                    $projects[3] = array(
-                        "link" => "#",
-                        "title" => "Project 4",
-                        "beschrijving" => "Dit project is nog niet van toepassing.",
-                        "image" => "./img/placeholder.png"
-                    );
+
+                    $stmt = $conn->query("SELECT * FROM projects");
+
+                    $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
                     foreach ($projects as $project) {
-                        echo '<a href="' . $project["link"] . '" target="_blank">
-                        <div class="card">
-                            <div class="cardHead circleSolution">
-                                <img src="' . $project["image"] . '" alt="project afbeelding">
-                            </div>
-                            <div class="cardText">
-                                <h2> ' . $project['title'] . '</h2>
-                                <p> ' . $project['beschrijving'] . '</p>
-                            </div>
-                        </div>
-                    </a> ';
-                    }
+                        if($project['button'] == null) {
+                            echo '
+                            <a href="' . $project["link"] . '" target="_blank">
+                                <div class="card">
+                                    <div class="cardHead circleSolution">
+                                        <img src="data:image/jpeg;base64,'.base64_encode( $project['image'] ).'" alt="project image"> 
+                                    </div>
+                                    <div class="cardText">
+                                        <h2> ' . $project['name'] . '</h2>
+                                        <p> ' . $project['description'] . '</p>
+                                    </div>
+                                </div>
+                            </a> ';
+                        } else{
+                            echo '
+                            <a href="' . $project["link"] . '" target="_blank">
+                                <div class="card">
+                                    <div class="cardHead circleSolution">
+                                        <img src="data:image/jpeg;base64,'.base64_encode( $project['image'] ).'" alt="project image"> 
+                                    </div>
+                                    <div class="cardText">
+                                        <h2> ' . $project['name'] . '</h2>
+                                        <p> ' . $project['description'] . '</p>
+                                        <button class="cardButton" onclick="' . $project['button_link'] . '"> ' . $project['button'] . ' </button>
+                                    </div>
+                                </div>
+                            </a> ';
+                    }};
                 ?>
             </div>
             <?php
@@ -88,17 +85,17 @@ include 'partials/header.php';
             ?>
             <div class="contactForm">
             <h1 class="titleContact">Contact</h1>
-                <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-                    <label for="name">Naam:</label>
+                <form id="contactForm" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+                    <label for="name">Name:</label>
                     <input type="text" name="name" placeholder="Jhon Dhoe" required>
                     <label for="email">Email:</label>
                     <input type="email" name="email" placeholder="jhondhoe@jhon.com" required>
-                    <label for="subject">Onderwerp:</label>
+                    <label for="subject">Subject:</label>
                     <input type="text" name="subject" placeholder="Contact" required>
-                    <label for="message">Bericht:</label>
-                    <textarea name="message" cols="30" rows="10" placeholder="Hier je bericht" required></textarea>
+                    <label for="message">Message:</label>
+                    <textarea name="message" cols="30" rows="10" placeholder="Your message..." required></textarea>
                     <label for="submit"></label>
-                    <input class="submit" type="submit" name="submit" value="Verstuur">
+                    <input class="submit" type="submit" name="submit" value="Submit">
                 </form>
                 <?php
                     function function_alert($message) { 

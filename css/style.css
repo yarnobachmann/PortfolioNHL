@@ -1,7 +1,9 @@
-body {
+body,html {
 	width: 100%;
+	min-height: 100vh;
 	height: 100%;
 	margin: 0px;
+	
 }
 
 a {
@@ -113,10 +115,13 @@ main {
 /* Cards is a sections with multiple cards iside it, it is a grid with an auto-fit that makes it more responsive */
 .cards {
 	max-width: 80vw;
-	margin: 15rem auto;
-	display: grid;
-	gap: 3rem;
-	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    margin: 15rem auto;
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 /* sets a height for the card */
 .cards a {
@@ -132,6 +137,25 @@ main {
 	box-shadow: 5px 8px 10px #33333371;
 	border-radius: 5px;
 }
+
+.card span {
+	text-decoration: none;
+	color: #000;
+}
+
+.cardButton {
+	padding: 0.4rem;
+    border-radius: 5px;
+    border: 0px;
+    background-color: #333;
+    color: #fff;
+	cursor: pointer;
+}
+
+.backButton {
+	margin-left: 3rem;
+}
+
 /* Sets the image of the card to contain the image so its always readable and a set height */
 .cardHead {
 	background-size: contain;
@@ -161,6 +185,8 @@ main {
 }
 /* Sets a margin for the text so it look a bit better */
 .cardText {
+	display: flex;
+	flex-direction: column;
 	margin: 10px;
 	padding-left: 1rem;
 	padding-right: 1rem;
@@ -218,12 +244,20 @@ form {
 	color: #fff;
   }
 
-input, textarea {
+  hr {
+	margin: 3rem 0rem;
+    width: 10rem;
+  }
+
+.submit {
+	color: white;
+} 
+
+input, textarea, select {
 	border-radius: 0.2rem; 
 	padding: 0.5rem;
 	background-color: #00000000;
 	box-shadow: 3px 5px 10px #33333371;
-	color: #fff;
 	border: 1px solid #00000010;
 }
 
@@ -250,6 +284,9 @@ input::placeholder, textarea::placeholder {
 
 /* Sets a background color and makes it into a grid */
 footer {
+	bottom: 0;
+    width: 100%;
+    position: relative;
 	background-color: #333;
 	display: grid;
 	grid-template-columns: repeat(6, 1fr);
@@ -297,4 +334,40 @@ footer {
 	color: white;
 	justify-content: center;
 	grid-area: 1 / 4 / 5 / 7; 
+}
+
+#cityForm {
+	display: flex;
+    flex-direction: column;
+    padding: 0px;
+	color: #000;
+}
+
+#feedbackForm {
+	display: flex;
+	justify-content: flex-start;
+    flex-direction: column;
+    padding: 0px;
+	color: #000;
+}
+
+#feedbackForm input[type=checkbox] {
+	width: 10px;
+	box-shadow: none;
+}
+
+.max-width{
+	max-width: 100%;
+}
+
+.upload {
+	width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+.assignments ul {
+	display: flex;
+    justify-content: space-between;
+    flex-direction: column;
 }

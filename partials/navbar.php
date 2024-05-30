@@ -4,14 +4,14 @@
         
         <ul>
             <li>
-                <a href='index.php' class="logo"><img src="img/logo/logoSmall.svg" alt="logo">Yarno Bachmann</a>
+                <a href='index.php' class="logo" id='logoText'><img src="img/logo/logoSmall.svg" alt="logo">Yarno Bachmann</a>
             </li>
-            <li>
+            <li id='menuItems'>
             <?php
                 // Arrays with all the nav items
-                $navName = ["Home", "Php"];
+                $navName = ["Home", "School"];
                 $className = ["$homeClass", "$phpClass"];
-                $link = ["index.php", "opdrachten.php"];
+                $link = ["index.php", "assignments.php"];
                 // Loops through the array and displays the values in the right places
                 $navItems = count($navName);
                 for($i = 0; $i < $navItems; $i++) {

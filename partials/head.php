@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- CSS -->
     <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <link rel="icon" href="img/logo/logoSmall.svg">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -18,7 +18,7 @@
     <script>
         jQuery(document).ready(function($){
             $.iMissYou({
-                title: "Laat je me alleen? ;-;",
+                title: "You will be back, right? ;-;",
                 favicon: {
                 enabled: false
             }
